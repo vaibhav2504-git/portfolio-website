@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaibhav Gaikwad - Portfolio</title>
+    <link rel="stylesheet" href="css1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+        span {
+            color: rgb(179, 20, 20);
+        }
+       .logo {
+             width: 120px;
+            }
+            body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background: linear-gradient(to bottom right, var(--second-bg-color), rgba(var(--main-color-rgb), 0.1));
+    padding: 60px 20px;
+   
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-img {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    background-color: #997dfd;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transition: .5s ease;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+    transition: .5s ease;
+}
+
+        .projects {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom right, var(--second-bg-color), rgba(var(--main-color-rgb), 0.1));
+            color: #fff;
+            min-height: 100vh;
+        }
+
+
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: #3498db;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-title {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            font-size: 1.2rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-box:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        .project-content p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack span {
+            background: #3498db;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #fff;
+        }
+
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .project-btn:hover {
+            background: #c0392b;
+        }
+
+        .project-btn i {
+            margin-left: 5px;
+        }
+
+        .footer {
+      background-color: #111827;
+      padding: 2.5rem 0;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(to right, #4f46e5, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    /* Hover Effects */
+    .hover-scale {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+      color: #a855f7;
+    }
+    .hover-button {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .hover-button:hover {
+      background-color: #a855f7;
+      transform: translateY(-2px);
+    }
+    .back-to-top {
+      display: inline-block;
+      padding: 0.5rem;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .back-to-top:hover {
+      background-color: #4f46e5;
+      color: #fff;
+      transform: rotate(360deg);
+    }
+    /* Fade-In Animation */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    /* Branding Section */
+    .footer-branding {
+      text-align: center;
+    }
+    .footer-branding h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+    .footer-branding p {
+      color: #9ca3af;
+      font-size: 1.2rem;
+      margin: 0.25rem 0;
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .footer-social a {
+      color: #9ca3af;
+      font-size: 2rem;
+    }
+    /* Navigation Links */
+    .footer-links {
+      text-align: center;
+    }
+    .footer-links h4 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #4f46e5;
+      margin: 0 0 0.75rem;
+    }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin: 0.5rem 0;
+    }
+    .footer-links a {
+      color: #9ca3af;
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+    /* Contact Form */
+    .footer-contact {
+      text-align: center;
+    }
+    .footer-contact h4 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #4f46e5;
+      margin: 0 0 0.75rem;
+    }
+    .footer-contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-contact input,
+    .footer-contact textarea {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #374151;
+      color: #f3f4f6;
+      border: 1px solid #4b5563;
+      border-radius: 0.375rem;
+      font-size: 1.3rem;
+    }
+    .footer-contact textarea {
+      resize: none;
+      height: 4rem;
+    }
+    .footer-contact input:focus,
+    .footer-contact textarea:focus {
+      outline: none;
+      border-color: #a855f7;
+      box-shadow: 0 0 5px rgba(168, 85, 247, 0.5);
+    }
+    .footer-contact button {
+      padding: 0.5rem 1rem;
+      background-color: #4f46e5;
+      color: #fff;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    /* Footer Bottom */
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-bottom p {
+      color: #9ca3af;
+      font-size: 1.3rem;
+      margin: 0;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-branding,
+      .footer-links,
+      .footer-contact {
+        text-align: center;
+      }
+      .footer-social {
+        justify-content: center;
+      }
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    </style>
+    
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="header">
+        <img src="background_logo-removebg.png" class="logo">
+        
+        <i class='bx bx-menu' id="menu-icon"></i>
+        
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+    </header>
+
+    <!-- home section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <p style="font-family: Copperplate, Papyrus, fantasy; font-size: 30px; color: white; ">WEB DESIGNER..</p>
+            <h1 style="font-family: Georgia, serif"> <span>H</span>ello! <br> <span>I</span>'m <span> Vaibhav, </span></h1>
+            <p>A passionate Full Stack Developer specializing in building exceptional digital experiences.</p>
+            <div class="social-media">
+                <a href="#" style="--i:7"><i class='bx bxl-facebook'></i></a>
+                <a href="#" style="--i:8"><i class='bx bxl-twitter'></i></a>
+                <a href="#" style="--i:9"><i class='bx bxl-instagram'></i></a>
+                <a href="#" style="--i:10"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" style="--i:11"><i class='bx bxl-whatsapp'></i></a>
+            </div>
+            <a href="https://drive.google.com/file/d/1-YC07-Pg8a636Up6zVzkR1cyOyow2bFU/view?usp=drivesdk" class="btn">Download CV</a>   
+        </div>
+
+        <div class="profession-container">
+            <div class="profession-box">
+                <div class="profession" style="--i:0;">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Web Developer</h3>
+                </div>
+                <div class="profession" style="--i:1;">
+                    <i class='bx bx-server'></i>
+                    <h3>Backend Developer</h3>
+                </div>
+                <div class="profession" style="--i:2;">
+                    <i class='bx bx-palette'></i>
+                    <h3>Web Designer</h3>
+                </div>
+                <div class="profession" style="--i:3;">
+                    <i class='bx bxs-devices'></i>
+                    <h3>Frontend Developer</h3>
+                </div>
+                <div class="circle"></div>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        
+        <div class="about-container">
+            <div class="about-img">
+                <img src="vaibhav2-removebg-preview.png" alt="Profile Photo">
+                <span class="circle-spin"></span>
+            </div>
+            
+            <div class="about-content">
+                <h3>Full Stack Developer!</h3>
+                <p>I am a passionate Full Stack Developer with expertise in both front-end and back-end development. I love creating responsive and user-friendly web applications that solve real-world problems. My journey in web development started with a curiosity to build things that make a difference.</p>
+                <p>I have a strong foundation in computer science fundamentals, including data structures and algorithms. I am well-versed in various programming languages, including Java, Python, JavaScript, and C++. I am also experienced with a range of web development frameworks and tools, including React, Node.js, Express, and MongoDB.</p>
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- skills section -->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        
+        <div class="skills-container">
+            <!-- Programming Skills -->
+            <div class="programming-skills">
+                <h3>Programming Skills</h3>
+                <div class="skill-item">
+                    <span class="skill-name">HTML</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">CSS</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">PHP</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">SQL</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="soft-skills">
+                <h3>Soft Skills</h3>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill">
+                        <div class="skill-card">
+                            <div class="skill-front">Problem Solving</div>
+                            <div class="skill-back">Strong analytical and creative problem-solving abilities</div>
+                        </div>
+                    </div>
+                    <div class="soft-skill">
+                        <div class="skill-card">
+                            <div class="skill-front">Communication</div>
+                            <div class="skill-back">Excellent verbal and written communication skills</div>
+                        </div>
+                    </div>
+                    <div class="soft-skill">
+                        <div class="skill-card">
+                            <div class="skill-front">Team Work</div>
+                            <div class="skill-back">Collaborative team player with leadership qualities</div>
+                        </div>
+                    </div>
+                    <div class="soft-skill">
+                        <div class="skill-card">
+                            <div class="skill-front">Time Management</div>
+                            <div class="skill-back">Efficient in managing multiple tasks and deadlines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- education section -->
+    <section class="education" id="education">
+        <h2 class="heading">My <span>Education</span></h2>
+        
+        <div class="education-timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">
+                        <i class='bx bxs-calendar'></i>
+                        2022 - 2025
+                    </div>
+                    <h3>Bachelor of Science</h3>
+                    <p class="institute">BAMU University</p>
+                    <p class="branch">Computer Science</p>
+                    <div class="grades">
+                        <span>CGPA: 8.2</span>
+                        <span>First Class</span>
+                    </div>
+                    <button class="btn markmemo-btn" onclick="toggleMarkmemo('be-memo')">
+                        <i class='bx bx-file'></i> View Markmemo
+                    </button>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">
+                        <i class='bx bxs-calendar'></i>
+                        2021 - 2022
+                    </div>
+                    <h3>HSC (12th)</h3>
+                    <p class="institute">Maharashtra State Board</p>
+                    <p class="branch">Science</p>
+                    <div class="grades">
+                        <span>66%</span>
+                        <span></span>
+                    </div>
+                    <button class="btn markmemo-btn" onclick="toggleMarkmemo('hsc-memo')">
+                        <i class='bx bx-file'></i> View Markmemo
+                    </button>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">
+                        <i class='bx bxs-calendar'></i>
+                        2019 - 2020
+                    </div>
+                    <h3>SSC (10th)</h3>
+                    <p class="institute">Maharashtra State Board</p>
+                    <p class="branch">General</p>
+                    <div class="grades">
+                        <span>91%</span>
+                        <span>First Class with Distinction</span>
+                    </div>
+                    <button class="btn markmemo-btn" onclick="toggleMarkmemo('ssc-memo')">
+                        <i class='bx bx-file'></i> View Markmemo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Markmemo Overlays -->
+        <div id="be-memo" class="markmemo-overlay">
+            <div class="markmemo-content">
+                <span class="close-btn" onclick="toggleMarkmemo('be-memo')">&times;</span>
+                <h3>Engineering Markmemo</h3>
+                <div class="semester">
+                    <h4>First Year</h4>
+                    <style>
+                        .sgpa {
+                            font-weight: 600;
+                            font-size: 1.2rem;
+                            color: var(--main-color);
+                        }
+                    </style>
+                    <p class="sgpa">SGPA: 7.96</p>
+
+                    <p>Computer Science V : A</p>
+                    <p>Computer Science IV: B</p>
+                    <p> Computer Science Practical III & VI : A+</p>
+                    <p> Electronics IV: A</p>
+                    <p> Electronics V: A+</p>
+                    <p> Electronics Practical III & VI : A++</p>
+                <a href="markmemo/BE_Markmemo.pdf" download class="btn" style="margin-top: 10px;font-size: 1.2rem; padding: 0.5rem 1rem; border-radius: 5px;">See Markmemo</a>
+                
+
+                </div>
+                <div class="semester">
+                    <h4>Second Year</h4>
+                    <style>
+                        .sgpa {
+                            font-weight: 600;
+                            font-size: 1.2rem;
+                            color: var(--main-color);
+                        }
+                    </style>
+                    <p class="sgpa">SGPA: 8.10</p>
+
+                    <p>Computer Science XII : B+</p>
+                    <p>Computer Science XIII: A </p>
+                    <p> Computer Science Practical III & VI : A++</p>
+                    <p> Electronics IV: A</p>
+                    <p> Electronics V: B+</p>
+                    <p> Electronics Practical III & VI : A++</p>
+                    <a href="markmemo/BE_Markmemo.pdf" download class="btn" style="margin-top: 10px;font-size: 1.2rem; padding: 0.5rem 1rem; border-radius: 5px;">See Markmemo</a>
+                </div>
+                <div class="semester">
+                    <h4>Third Year</h4>
+                    <style>
+                        .sgpa {
+                            font-weight: 600;
+                            font-size: 1.2rem;
+                            color: var(--main-color);
+                        }
+                    </style>
+                    <p class="sgpa">SGPA: NA</p>
+
+                    <p>Computer Science V : NA</p>
+                    <p>Computer Science IV: NA</p>
+                    <p> Computer Science Practical III & VI : NA</p>
+                    <p> Electronics IV: NA</p>
+                    <p> Electronics V: NA</p>
+                    <p> Electronics Practical III & VI : NA</p>
+                    <a href="markmemo/BE_Markmemo.pdf" download class="btn" style="margin-top: 10px;font-size: 1.2rem; padding: 0.5rem 1rem; border-radius: 5px;">See Markmemo</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="hsc-memo" class="markmemo-overlay">
+            <div class="markmemo-content">
+                <span class="close-btn" onclick="toggleMarkmemo('hsc-memo')">&times;</span>
+                <h3>HSC Markmemo</h3>
+                <div class="semester">
+                    <p>Sociology: 78</p>
+                    <p>Physics: 54</p>
+                    <p>Chemistry: 56</p>
+                    <p>Marathi: 84</p>
+                    <p>Biology: 71</p>
+                  
+                    <p>Information Technology: 86</p>
+                    <a href="markmemo/BE_Markmemo.pdf" download class="btn" style="margin-top: 10px;font-size: 1.2rem; padding: 0.5rem 1rem; border-radius: 5px;">See Markmemo</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="ssc-memo" class="markmemo-overlay">
+            <div class="markmemo-content">
+                <span class="close-btn" onclick="toggleMarkmemo('ssc-memo')">&times;</span>
+                <h3>SSC Markmemo</h3>
+                <div class="semester">
+                    <p>Mathematics: 83</p>
+                    <p>Science: 91</p>
+                    <p>English: 88</p>
+                    <p>Social Science: 93</p>
+                    <p>Languages: 95</p>
+                    <a href="markmemo/BE_Markmemo.pdf" download class="btn" style="margin-top: 10px;font-size: 1.2rem; padding: 0.5rem 1rem; border-radius: 5px;">See Markmemo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section -->
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-box" data-category="web">
+                <img src="project_1.png" alt="E-Commerce Website">
+                <h4 class="project-title">E-Commerce Website</h4>
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>E-Commerce Website</h3>
+                        <p>A full-stack e-commerce platform with secure payment integration, user authentication, and real-time inventory management.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-box" data-category="app">
+                <img src="project_2.png" alt="Task Manager App">
+                <h4 class="project-title">Task Manager App</h4>
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>Task Manager App</h3>
+                        <p>A collaborative task management application with real-time updates, team chat, and progress tracking features.</p>
+                        <div class="tech-stack">
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>Express</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-box" data-category="web">
+                <img src="project_3.png" alt="Portfolio Website">
+                <h4 class="project-title">Portfolio Website</h4>
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>A modern portfolio website featuring smooth animations, dark mode, and responsive design for optimal viewing on all devices.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-box" data-category="iot">
+                <img src="project_4.png" alt="Smart Home IoT">
+                <h4 class="project-title">Smart Home IoT</h4>
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>Smart Home IoT</h3>
+                        <p>An IoT-based home automation system with temperature control, lighting automation, and mobile app integration.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>React Native</span>
+                            <span>IoT</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h3>Send Me a Message</h3>
+                        <p>Let's create something amazing together!</p>
+                    </div>
+
+                    <form action="contact.php" method="POST">
+                        <div class="form-group">
+                            <div class="input-wrap">
+                                <input type="text" name="name" required>
+                                <label>Full Name</label>
+                                <i class='bx bx-user'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-wrap">
+                                <input type="email" name="email" required>
+                                <label>Email Address</label>
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-wrap">
+                                    <input type="tel" name="tel" required>
+                                    <label>Phone Number</label>
+                                    <i class='bx bx-phone'></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-wrap">
+                                    <select required name="subject">
+                                        <option value=""selected disabled></option>
+                                        <option value="general" style="color: black;">General Inquiry</option>
+                                        <option value="project" style="color: black;">Project Discussion</option>
+                                        <option value="collaboration" style="color: black;">Collaboration</option>
+                                        <option value="other" style="color: black;">Other</option>
+                                    </select>
+                                    <label>Subject</label>
+                                    <i class='bx bx-list-ul'></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-wrap textarea-wrap">
+                                <textarea required rows="4" name="message"></textarea>
+                                <label>Your Message</label>
+                                <i class='bx bx-message-dots'></i>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class='bx bx-send'></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="card-content">
+                        <h3>Contact Information</h3>
+                        <p>Ready to start a project? Drop me a line!</p>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="icon-box">
+                                    <i class='bx bx-phone-call'></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Call Me</h4>
+                                    <a href="tel:+91 7517251229">
+                                        <p>+91 7517251229</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="icon-box">
+                                    <i class='bx bx-envelope'></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Email Me</h4>
+                                    <a href="mailto:vaibhavgaikwad75172512@gmail.com">
+                                        <p>vaibhavgaikwad75172512@gmail.com</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="icon-box">
+                                    <i class='bx bx-map'></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Location</h4>
+                                    <p>Maharashtra, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class='bx bxl-linkedin'></i></a>
+                            <a href="#" class="social-link"><i class='bx bxl-github'></i></a>
+                            <a href="#" class="social-link"><i class='bx bxl-instagram'></i></a>
+                            <a href="#" class="social-link"><i class='bx bxl-twitter'></i></a>
+                        </div>
+                    </div>
+                    <div class="card-pattern"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- Branding Section -->
+          <div class="footer-branding fade-in" style="animation-delay: 0.2s;">
+            <h3 class="gradient-text">Vaibhav Gaikwad</h3>
+            <p>Web Developer & Designer</p>
+            <div class="footer-social">
+              <a href="https://linkedin.com/in/vaibhavgaikwad" aria-label="Visit my LinkedIn" title="LinkedIn Profile" class="hover-scale">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/vaibhavgaikwad" aria-label="Visit my GitHub" title="GitHub Profile" class="hover-scale">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://twitter.com/vaibhavgaikwad" aria-label="Visit my Twitter" title="Twitter Profile" class="hover-scale">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Navigation Links -->
+          <div class="footer-links fade-in" style="animation-delay: 0.4s;">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#home" class="hover-scale">Home</a></li>
+              <li><a href="#about" class="hover-scale">About</a></li>
+              <li><a href="#projects" class="hover-scale">Projects</a></li>
+              <li><a href="#contact" class="hover-scale">Contact</a></li>
+            </ul>
+          </div>
+    
+          <!-- Contact Form -->
+          <div class="footer-contact fade-in" style="animation-delay: 0.6s;">
+            <h4>Quick Contact</h4>
+            <form method="POST" action="minicontact.php">
+              <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
+              <textarea name="message" placeholder="Your Message" aria-label="Your Message" required></textarea>
+              <button type="submit" name="send" class="hover-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+    
+        <hr style="border-color: #4b5563; margin: 1.5rem 0;">
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom fade-in" style="animation-delay: 0.8s;">
+          <p>© <span id="year"></span> Vaibhav Gaikwad. All rights reserved.</p>
+          <a href="#" class="back-to-top" aria-label="Scroll back to top">
+            <i class="fas fa-arrow-up"></i>
+          </a>
+        </div>
+      </footer>
+    
+      <script>
+        // Dynamic Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    
+        // Smooth Scroll for Back to Top
+        document.querySelector('.back-to-top').addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectBoxes = document.querySelectorAll('.project-box');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectBoxes.forEach(box => {
+                    const category = box.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        box.style.display = 'block';
+                        box.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animation keyframes
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(`
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `, styleSheet.cssRules.length);
+    </script>
+
+  
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- custom js -->
+    <script>
+        // Toggle menu icon
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+
+        // Remove menu on link click
+        let navLinks = document.querySelectorAll('header nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('bx-x');
+                navbar.classList.remove('active');
+            });
+        });
+
+        // Scroll sections
+        let sections = document.querySelectorAll('section');
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 100;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    // Active navbar links
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+
+            // Sticky header
+            let header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 100);
+
+            // Remove menu on scroll
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+
+        // Dark mode
+        let darkModeIcon = document.querySelector('#darkMode-icon');
+
+        darkModeIcon.onclick = () => {
+            darkModeIcon.classList.toggle('bx-sun');
+            document.body.classList.toggle('dark-mode');
+        };
+
+        // ScrollReveal
+        ScrollReveal({ 
+            reset: true,
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+        ScrollReveal().reveal('.profession-container, .projects-box, .contact form', { origin: 'bottom' });
+        ScrollReveal().reveal('.home-content h1, .about-content', { origin: 'left' });
+        ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
+
+        // Markmemo toggle
+        function toggleMarkmemo(id) {
+            let markmemo = document.getElementById(id);
+            markmemo.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
